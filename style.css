@@ -1,0 +1,98 @@
+@font-face{
+font-family: "Ailerons";
+src: url("fonts/Ailerons-Typeface.otf") format("opentype");
+}
+body, html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    user-select: none;
+}
+.hud-big-container{
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  transition: width 2s;
+  position: relative;
+}
+.hud-big-container.small{
+  width: 80%;
+}
+.hud-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  font-family: "Ailerons";
+  font-size: 40px;
+  perspective: 600px;
+}
+.bottom-hud{
+  bottom: 80px;
+}
+.top-hud{
+  top: 80px;
+}
+.hud-piece{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  background: black;
+  width: 300px;
+  height: 150px;
+  color: white;
+  text-align: center;
+}
+.button-toggle-menu{
+  font-family: "Ailerons";
+  font-size: 30px;
+  text-align: center;
+  font-weight: 900;
+  width: 40px;
+  height: 40px;
+  background: black;
+  color:white;
+  border-radius: 40px;
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  cursor: pointer;
+  z-index: 100;
+}
+.menu
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+}
+
+.menu .inner
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 240px;
+    height: 100%;
+    padding: 20px 40px;
+    background: black;
+    font-family: "Ailerons";
+    color: #ffffff;
+    transform: translateX(100%);
+    transition-property: transform;
+    transition-duration: 1s;
+    will-change: transform;
+}
+.menu.open .inner
+{
+    transform: translateX(0%);
+}
