@@ -10,11 +10,21 @@ body, html {
     overflow-x: hidden;
     user-select: none;
 }
+.background-home{
+  display: flex;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Ailerons";
+  font-size: 20px;
+}
 .hud-big-container{
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
-  transition: width 2s;
+  transition: width 1.7s;
   position: relative;
 }
 .hud-big-container.small{
