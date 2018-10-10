@@ -10,12 +10,7 @@ menuToggle.addEventListener('click', () =>
     container.classList.toggle('small')
     menuToggle.classList.toggle('move')
 })
-for(let = i; i < elements.length; i++){
-  elements[i].addEventListener('click', () =>
-  {
-    
-  })
-}
+
 window.addEventListener('mousemove', (_event) =>
 {
   const x = (window.innerWidth/2 -_event.clientX)/300
