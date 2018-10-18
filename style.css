@@ -10,6 +10,60 @@ body, html {
     overflow-x: hidden;
     user-select: none;
 }
+.loader-container{
+  position: fixed;
+  display: flex;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+  overflow: hidden;
+}
+.loader-container *{
+  height: 100vh;
+  width: 35%;
+  background: black;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  will-change: transform;
+}
+.loader-bar-1{
+  animation-name : loading-screen-up;
+}
+.loader-bar-2{
+  animation-name : loading-screen-down;
+}
+.loader-bar-3{
+  animation-name : loading-screen-up;
+}
+@keyframes loading-screen-up
+{
+    0%{
+        transform: translateY(0px);
+    }
+    99%{
+        transform: translateY(1000px);
+        background: black;
+    }
+    100%{
+        background: white;
+    }
+}
+@keyframes loading-screen-down
+{
+    0%{
+        transform: translateY(0px);
+    }
+    99%{
+        transform: translateY(-1000px);
+        background: black;
+    }
+    100%{
+        background: white;
+    }
+}
 .background-home{
   display: flex;
   position: absolute;
@@ -20,13 +74,22 @@ body, html {
   font-family: "Ailerons";
   font-size: 20px;
 }
+.apparition-animation{
+  animation-timing-function: ease;
+  animation-name: hud-apparition-transform;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 5s;
+}
 .hud-big-container{
   width: 100%;
   height: 100vh;
   position: relative;
   overflow-x: hidden;
-  transition: width 1.5s;
+  transition: width 1.2s;
   position: relative;
+  perspective: 800px;
+  overflow: hidden;
 }
 .hud-big-container.small{
   width: 80%;
@@ -43,6 +106,14 @@ body, html {
   font-family: "Ailerons";
   font-size: 40px;
   perspective: 600px;
+  transform: translateZ(0px);
+  will-change: transform;
+}
+@keyframes hud-apparition-transform
+{
+    0%{ transform: translateZ(-5000px);}
+    55%{transform: translateZ(50px);}
+    100%{transform: translateZ(0px);}
 }
 .bottom-hud{
   bottom: 80px;
@@ -66,6 +137,7 @@ body, html {
   justify-content: center;
   width: 100%;
   height: 100%;
+  font-size: 30px;
   transition-property: color background;
   transition-duration: 1s;
   will-change: color background;
@@ -73,6 +145,7 @@ body, html {
 .hud-piece:hover span{
   background: white;
   color: black;
+  font-size: 40px;
   border: 2px solid black;
 }
 .button-toggle-menu{
@@ -89,11 +162,19 @@ body, html {
   right: 10px;
   top: 50%;
   cursor: pointer;
-  z-index: 100;
+  z-index: 9;
   transform: translateX(0%);
-  transition-property: transform color background;
+  transition-property: transform;
   transition-duration: 1s;
-  will-change: transform color background;
+  will-change: transform;
+}
+@keyframes button-pop-left
+{
+    0%{ transform: translateX(200%);}
+    100%{transform: translateX(0%);}
+}
+.move{
+
 }
 .menu
 {
@@ -101,15 +182,17 @@ body, html {
     top: 0;
     right: 0;
     height: 100%;
-    width: 0;
+    width: 100%;
 }
 
-.menu .inner
+.menu .innerRight
 {
     position: absolute;
+    display: flex;
+    flex-flow: row wrap;
     top: 0;
     right: 0;
-    width: 240px;
+    width: 70%;
     height: 100%;
     padding: 20px 40px;
     background: black;
@@ -119,33 +202,177 @@ body, html {
     transition-property: transform;
     transition-duration: 1s;
     will-change: transform;
-
 }
-.menu.open .inner
+.innerRight .innerRightContainer{
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+  width: 25%;
+  height: 93%;
+}
+.innerBasic{
+  border: 3px solid white;
+  width: 90%;
+}
+.innerSmallBlock{
+  height: 20%;
+}
+.innerMiddleBlock{
+  height: 30%;
+}
+.innerBigBlock{
+  height: 40%;
+}
+.menu .innerLeft
+{
+    position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background: white;
+    font-family: "Ailerons";
+    color: black;
+    transform: translateX(-100%);
+    transition-property: transform;
+    transition-duration: 1s;
+    will-change: transform;
+}
+.innerLeft span{
+  font-size: 120px;
+  margin-left: 10px;
+}
+.menu.open .innerRight
+{
+    transform: translateX(0%);
+}
+.menu.open .innerLeft
 {
     transform: translateX(0%);
 }
 .button-toggle-menu.move{
-  transform: translateX(-600%) rotate(180deg);
+  transform: translateX(-3400%) rotate(180deg);
   background: white;
   color:black;
 }
-.button-hover{
-  cursor: pointer;
-  color: white;
-  position: relative;
-  font-size: 25px;
-  margin-left: 10%;
+
+
+
+
+
+
+/*CUBE 3-D*/
+.cube-3d{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+    transition-duration: 1s;
+    transition-property: transform;
+    transition-timing-function: ease;
 }
-.button-hover:after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 0%;
-  border-bottom: 2px solid white;
-  transition: 0.4s;
+.cube-3d.changePlus{
+    transform: translateX(200px);
 }
-.button-hover:hover:after {
-  width: 100%;
+.cube-3d.changeMinus{
+    transform: translateX(-200px);
+}
+.cube-3d *{
+    transform-style: preserve-3d;
+}
+
+.cube-3d .y-axis{
+    animation-duration: 10s;
+    animation-name : cube-rotateY;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.cube-3d .x-axis{
+    animation-duration: 10s;
+    animation-name : cube-rotateX;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+.cube-3d .face{
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 200px;
+    height: 200px;
+    opacity: 0.8;
+}
+
+.cube-3d .face-1{
+    border: 3px solid black;
+    transform: translateZ(100px);
+    transition-duration: 1s;
+    transition-property: transform;
+}
+
+.cube-3d .face-2{
+    border: 3px solid black;
+    transform: rotateY(90deg) translateZ(100px);
+    transition-duration: 1s;
+    transition-property: transform;
+}
+
+.cube-3d .face-3{
+    border: 3px solid black;
+    transform: rotateY(180deg) translateZ(100px);
+    transition-duration: 1s;
+    transition-property: transform;
+}
+
+.cube-3d .face-4{
+    border: 3px solid black;
+    transform: rotateY(-90deg) translateZ(100px);
+    transition-duration: 1s;
+    transition-property: transform;
+}
+
+.cube-3d .face-5{
+    border: 3px solid black;
+    transform: rotateX(90deg) translateZ(100px);
+    transition-duration: 1s;
+    transition-property: transform;
+}
+
+.cube-3d .face-6{
+    border: 3px solid black;
+    transform: rotateX(-90deg) translateZ(100px);
+    transition-duration: 1s;
+    transition-property: transform;
+}
+
+@keyframes cube-rotateY
+{
+    0%{
+        transform: rotateY(0);
+    }
+    50%{
+        transform: rotateY(180deg);
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes cube-rotateX
+{
+    0%{
+        transform: rotateX(0);
+    }
+    50%{
+        transform: rotateX(180deg);
+    }
+    100%{
+        transform: rotateX(360deg);
+    }
 }
