@@ -86,14 +86,11 @@ body, html {
   height: 100vh;
   position: relative;
   overflow-x: hidden;
-  transition: width 1.2s;
   position: relative;
   perspective: 800px;
   overflow: hidden;
 }
-.hud-big-container.small{
-  width: 80%;
-}
+
 .hud-container{
   display: flex;
   justify-content: space-between;
@@ -159,13 +156,14 @@ body, html {
   color:white;
   border-radius: 40px;
   position: fixed;
-  right: 10px;
+  right: 1%;
   top: 50%;
   cursor: pointer;
-  z-index: 9;
+  z-index: 16;
   transform: translateX(0%);
-  transition-property: transform;
+  transition-property: transform right;
   transition-duration: 1s;
+  transition-timing-function: ease;
   will-change: transform;
 }
 @keyframes button-pop-left
@@ -183,6 +181,7 @@ body, html {
     right: 0;
     height: 100%;
     width: 100%;
+    z-index: -1;
 }
 
 .menu .innerRight
@@ -213,6 +212,30 @@ body, html {
 .innerBasic{
   border: 3px solid white;
   width: 90%;
+  overflow: hidden;
+  position: relative;
+}
+.filler-skew-menu{
+  background: white;
+  transform: skewX(45deg) translateX(25px);
+  width: 200%;
+  height: 50px;
+  margin-bottom: 5px;
+}
+.menu-title-number{
+  position: absolute;
+  top:10px;
+  left:0px;
+  font-size: 40px;
+}
+.menu-title{
+  position: absolute;
+  top:0px;
+  left:70%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  font-weight: normal;
+  color: black;
 }
 .innerSmallBlock{
   height: 20%;
@@ -254,7 +277,8 @@ body, html {
     transform: translateX(0%);
 }
 .button-toggle-menu.move{
-  transform: translateX(-3400%) rotate(180deg);
+  transform: rotate(180deg);
+  right: 70%;
   background: white;
   color:black;
 }
@@ -374,5 +398,41 @@ body, html {
     }
     100%{
         transform: rotateX(360deg);
+    }
+}
+
+
+
+/*Ripple effect*/
+
+.ripple-style{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  mix-blend-mode: difference;
+  z-index: -50;
+}
+.ripple-style-after{
+  border: 0px solid black;
+  animation-name: ripple;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes ripple
+{
+    0%{
+        width: 0%;
+        height: 0%;
+        border-width: 100px;
+    }
+
+    100%{
+        width: 200%;
+        height: 300%;
+        border-width: 0px;
     }
 }
