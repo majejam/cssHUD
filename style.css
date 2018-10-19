@@ -231,8 +231,7 @@ body, html {
 .menu-title{
   position: absolute;
   top:0px;
-  left:70%;
-  transform: translateX(-50%);
+  right:5%;
   font-size: 40px;
   font-weight: normal;
   color: black;
@@ -284,11 +283,65 @@ body, html {
 }
 
 
+/*WAVE*/
+.wave-container{
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width:80%;
+  height:100%;
+  top: 0;
+  left: 10%;
+}
+.single-wave-container{
+  height: 30%;
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wave-style{
+  height: 100px;
+  width: 10px;
+  border-radius: 5px;
+  background: black;
+  transition: height 0.5s ease-in-out;
+  transition-delay: 0;
+}
+.wave-animation{
+  animation-name: wave-animation;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.wave-1{animation-delay: 0ms;}
+.wave-2{animation-delay: 200ms;}
+.wave-3{animation-delay: 400ms;}
+.wave-4{animation-delay: 600ms;}
+.wave-5{animation-delay: 800ms;}
 
-
-
-
+@keyframes wave-animation
+{
+    0%{
+        height: 10px;
+    }
+    50%{
+        height: 100px;
+    }
+    100%{
+        height: 10px;
+    }
+}
 /*CUBE 3-D*/
+.cube-container{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  top: 50%;
+  left: 50%;
+  visibility: hidden;
+}
 .cube-3d{
     position: absolute;
     display: flex;
@@ -404,35 +457,56 @@ body, html {
 
 
 /*Ripple effect*/
-
+.ripple-container{
+  position: absolute;
+  width: 500px;
+  height:500px;
+  top: 50%;
+  left: 50%;
+  visibility: hidden;
+  transform: translate(-50%,-50%);
+}
 .ripple-style{
   position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%,-50%);
   width: 0;
   height: 0;
   border-radius: 100%;
-  mix-blend-mode: difference;
   z-index: -50;
 }
 .ripple-style-after{
   border: 0px solid black;
-  animation-name: ripple;
+  animation-name: ripple-effect-animation;
   animation-duration: 2s;
   animation-timing-function: ease;
-  animation-iteration-count: 1;
+  animation-iteration-count: infinite;
   animation-fill-mode: forwards;
 }
-@keyframes ripple
+.ripple-1{
+  animation-delay: 0s;
+}
+.ripple-2{
+  animation-delay: 0.2s;
+}
+.ripple-3{
+  animation-delay: 1s;
+}
+@keyframes ripple-effect-animation
 {
     0%{
         width: 0%;
         height: 0%;
-        border-width: 100px;
+        border-width: 10px;
     }
-
+    25%{
+      opacity: 1;
+    }
     100%{
-        width: 200%;
-        height: 300%;
+        width: 100%;
+        height: 100%;
         border-width: 0px;
+        opacity: 0;
     }
 }
