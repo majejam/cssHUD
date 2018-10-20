@@ -326,6 +326,7 @@ body, html {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: 1s;
 }
 .small-option-button-container-selected{
   background: white;
