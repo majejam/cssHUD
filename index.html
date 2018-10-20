@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="CSS futurisctic HUD">
+  <meta property="og:title" content="CSS HUD">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/logo.png">
+  <meta property="og:description" content="A HUD made with css and js">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="shortcut icon" href="img/logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>HUD</title>
+  <title>CSS HUD</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,98 +20,81 @@
     <div class="loader-bar-2"></div>
     <div class="loader-bar-3"></div>
   </div>
+  <div class="responsive-alert">
+    <span>Sorry folks !</span>
+    <span>You need to have a resolution of at least 1280 x 720 pixels !</span>
+  </div>
   <div class="hud-big-container">
+    <div class="rain-container">
+      <div class="single-rain-element rain-delay-1">
+      </div>
+    </div>
     <div class="wave-container">
       <div class="single-wave-container">
-        <div class="wave-style wave-1">
-        </div>
+        <div class="wave-style wave-1"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-2">
-        </div>
+        <div class="wave-style wave-2"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-3">
-        </div>
+        <div class="wave-style wave-3"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-4">
-        </div>
+        <div class="wave-style wave-4"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-5">
-        </div>
+        <div class="wave-style wave-5"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-1">
-        </div>
+        <div class="wave-style wave-1"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-2">
-        </div>
+        <div class="wave-style wave-2"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-3">
-        </div>
+        <div class="wave-style wave-3"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-4">
-        </div>
+        <div class="wave-style wave-4"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-5">
-        </div>
+        <div class="wave-style wave-5"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-1">
-        </div>
+        <div class="wave-style wave-1"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-2">
-        </div>
+        <div class="wave-style wave-2"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-3">
-        </div>
+        <div class="wave-style wave-3"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-4">
-        </div>
+        <div class="wave-style wave-4"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-5">
-        </div>
+        <div class="wave-style wave-5"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-1">
-        </div>
+        <div class="wave-style wave-1"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-2">
-        </div>
+        <div class="wave-style wave-2"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-3">
-        </div>
+        <div class="wave-style wave-3"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-4">
-        </div>
+        <div class="wave-style wave-4"></div>
       </div>
       <div class="single-wave-container">
-        <div class="wave-style wave-5">
-        </div>
+        <div class="wave-style wave-5"></div>
       </div>
+    </div>
     <div class = "ripple-container">
-      <div class="ripple-style ripple-style-after ripple-1">
-
-      </div>
-      <div class="ripple-style ripple-style-after ripple-2">
-
-      </div>
-      <div class="ripple-style ripple-style-after ripple-3">
-
-      </div>
+      <div class="ripple-style ripple-style-after ripple-1"></div>
+      <div class="ripple-style ripple-style-after ripple-2"></div>
+      <div class="ripple-style ripple-style-after ripple-3"></div>
     </div>
     <div class = "cube-container">
       <div class="cube-3d">
@@ -154,8 +144,8 @@
       <span><</span>
     </div>
   </div>
-  <div class="menu">
-    <div class="innerLeft">
+  <div class="menu-container">
+    <div class="inner-menu-left">
       <span>//</span>
       <span>THE</span>
       <span>FUTURE</span>
@@ -163,12 +153,12 @@
       <span>HERE</span>
       <span>//</span>
     </div>
-    <div class="innerRight">
-      <div class="innerRightContainer">
+    <div class="inner-menu-right">
+      <div class="inner-right-container">
         <h1>// MENU</h1>
       </div>
-      <div class="innerRightContainer">
-        <div class="innerSmallBlock innerBasic">
+      <div class="inner-right-container">
+        <div class="inner-small-block inner-menu-basic">
           <div class="filler-skew-menu">
           </div>
           <div class="menu-title-number">
@@ -183,7 +173,7 @@
           <span>// everything is explained in the readme </span>
           <span>// i really hope that there is no bug </span>
         </div>
-        <div class="innerMiddleBlock innerBasic">
+        <div class="inner-middle-block inner-menu-basic">
           <div class="filler-skew-menu">
           </div>
           <div class="menu-title-number">
@@ -193,7 +183,7 @@
             <span>Cube</span>
           </div>
         </div>
-        <div class="innerBigBlock innerBasic">
+        <div class="inner-big-block inner-menu-basic">
           <div class="filler-skew-menu">
           </div>
           <div class="menu-title-number">
@@ -204,8 +194,8 @@
           </div>
         </div>
       </div>
-      <div class="innerRightContainer ">
-        <div class="innerBigBlock innerBasic">
+      <div class="inner-right-container">
+        <div class="inner-big-block inner-menu-basic">
           <div class="filler-skew-menu">
           </div>
           <div class="menu-title-number">
@@ -215,14 +205,14 @@
             <span> Wind</span>
           </div>
         </div>
-        <div class="innerSmallBlock innerBasic">
+        <div class="inner-small-block inner-menu-basic">
           <div class="filler-skew-menu">
           </div>
           <div class="menu-title-number">
             <span>5</span>
           </div>
         </div>
-        <div class="innerMiddleBlock innerBasic">
+        <div class="inner-middle-block inner-menu-basic">
           <div class="filler-skew-menu">
           </div>
           <div class="menu-title-number">
@@ -233,22 +223,22 @@
           </div>
         </div>
       </div>
-      <div class="innerRightContainer">
-        <div class="innerBigBlock innerBasic">
+      <div class="inner-right-container">
+        <div class="inner-big-block inner-menu-basic">
           <div class="filler-skew-menu">
           </div>
           <div class="menu-title-number">
             <span>7</span>
           </div>
         </div>
-        <div class="innerMiddleBlock innerBasic">
+        <div class="inner-middle-block inner-menu-basic">
           <div class="filler-skew-menu">
           </div>
           <div class="menu-title-number">
             <span>8</span>
           </div>
         </div>
-        <div class="innerSmallBlock innerBasic">
+        <div class="inner-small-block inner-menu-basic">
           <div class="filler-skew-menu">
           </div>
           <div class="menu-title-number">

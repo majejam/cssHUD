@@ -16,7 +16,7 @@ body, html {
   justify-content: flex-start;
   height: 100vh;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
   overflow: hidden;
 }
 .loader-container *{
@@ -26,7 +26,7 @@ body, html {
   animation-timing-function: ease-in;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-duration: 1s;
+  animation-duration: 2s;
   will-change: transform;
 }
 .loader-bar-1{
@@ -43,6 +43,9 @@ body, html {
     0%{
         transform: translateY(0px);
     }
+    50%{
+        transform: translateY(0px);
+    }
     99%{
         transform: translateY(1000px);
         background: black;
@@ -54,6 +57,9 @@ body, html {
 @keyframes loading-screen-down
 {
     0%{
+        transform: translateY(0px);
+    }
+    50%{
         transform: translateY(0px);
     }
     99%{
@@ -171,10 +177,8 @@ body, html {
     0%{ transform: translateX(200%);}
     100%{transform: translateX(0%);}
 }
-.move{
 
-}
-.menu
+.menu-container
 {
     position: fixed;
     top: 0;
@@ -184,7 +188,7 @@ body, html {
     z-index: -1;
 }
 
-.menu .innerRight
+.menu-container .inner-menu-right
 {
     position: absolute;
     display: flex;
@@ -202,14 +206,14 @@ body, html {
     transition-duration: 1s;
     will-change: transform;
 }
-.innerRight .innerRightContainer{
+.inner-menu-right .inner-right-container{
   display: flex;
   justify-content: space-between;
   flex-flow: column nowrap;
   width: 25%;
   height: 93%;
 }
-.innerBasic{
+.inner-menu-basic{
   border: 3px solid white;
   width: 90%;
   overflow: hidden;
@@ -236,16 +240,16 @@ body, html {
   font-weight: normal;
   color: black;
 }
-.innerSmallBlock{
+.inner-small-block{
   height: 20%;
 }
-.innerMiddleBlock{
+.inner-middle-block{
   height: 30%;
 }
-.innerBigBlock{
+.inner-big-block{
   height: 40%;
 }
-.menu .innerLeft
+.menu-container .inner-menu-left
 {
     position: absolute;
     display: flex;
@@ -263,15 +267,15 @@ body, html {
     transition-duration: 1s;
     will-change: transform;
 }
-.innerLeft span{
-  font-size: 120px;
+.inner-menu-left span{
+  font-size: 6vw;
   margin-left: 10px;
 }
-.menu.open .innerRight
+.menu-container.open .inner-menu-right
 {
     transform: translateX(0%);
 }
-.menu.open .innerLeft
+.menu-container.open .inner-menu-left
 {
     transform: translateX(0%);
 }
@@ -281,6 +285,48 @@ body, html {
   background: white;
   color:black;
 }
+
+
+/*Rain*/
+.rain-container{
+  position: absolute;
+  width:100%;
+  height:100%;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  transform: skewX(0deg);
+}
+.single-rain-element{
+  position: absolute;
+  top:-20%;
+  left:50%;
+  width: 5px;
+  height: 10px;
+  background: black;
+  animation-name: make-it-rain;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.48, 0.07, 0.57, 0.71);
+  animation-iteration-count: infinite;
+  will-change: top;
+}
+.rain-delay{animation-delay: 0ms;}
+
+@keyframes make-it-rain
+{
+    0%{
+      top: -20%;
+    }
+
+    100%{
+      top: 120%;
+    }
+}
+
+
+
+
+
 
 
 /*WAVE*/
@@ -293,6 +339,7 @@ body, html {
   height:100%;
   top: 0;
   left: 10%;
+  visibility: hidden;
 }
 .single-wave-container{
   height: 30%;
@@ -314,6 +361,7 @@ body, html {
   animation-duration: 1000ms;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  will-change: height;
 }
 .wave-1{animation-delay: 0ms;}
 .wave-2{animation-delay: 200ms;}
@@ -509,4 +557,34 @@ body, html {
         border-width: 0px;
         opacity: 0;
     }
+}
+
+
+
+
+/*responsive */
+.responsive-alert{
+  position: fixed;
+  z-index: -80;
+  top: 0;
+  left:0;
+  width: 100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  background: black;
+  visibility: hidden;
+}
+.responsive-alert span{
+  font-family: 'Ailerons';
+  text-align: center;
+  color: white;
+}
+@media (max-width:1000px){
+  .responsive-alert{
+    z-index: 150;
+    visibility: visible;
+  }
 }
