@@ -4,8 +4,8 @@
 
 ## Requirements
 
-* a Resolution of at least 1280 x 720 px
-* A modern browser 
+* A resolution of at least 1280 x 720 px
+* A modern browser (Chrome, Edge, Firefox)
 
 
 ## Features

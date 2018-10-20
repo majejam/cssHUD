@@ -210,8 +210,11 @@ body, html {
   display: flex;
   justify-content: space-between;
   flex-flow: column nowrap;
-  width: 25%;
+  width: 33%;
   height: 93%;
+}
+.inner-right-container h1{
+  font-size: 4vw;
 }
 .inner-menu-basic{
   border: 3px solid white;
@@ -285,6 +288,81 @@ body, html {
   background: white;
   color:black;
 }
+.version-menu{
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  color:black;
+  font-size: 1.5vw;
+}
+.centered-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+.centered-text span{
+  padding-top: 10px;
+  font-size: 1vw;
+}
+
+
+
+/*Option button*/
+.option-button-container{
+  position: absolute;
+  top: 55px;
+  left:0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+}
+.small-option-button-container{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.small-option-button-container-selected{
+  background: white;
+}
+.small-option-button-container:hover .option-filler{
+  width:100%;
+  left:0;
+}
+.option-filler{
+  position: absolute;
+  top:0;
+  right:0;
+  height: 100%;
+  width: 0%;
+  background: white;
+  transition: width 0.5s ease;
+}
+.small-option-button-container span{
+  color: white;
+  font-size: 2vw;
+  mix-blend-mode: difference;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*Rain*/
@@ -381,6 +459,17 @@ body, html {
         height: 10px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 /*CUBE 3-D*/
 .cube-container{
   position: absolute;
@@ -504,6 +593,17 @@ body, html {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 /*Ripple effect*/
 .ripple-container{
   position: absolute;
@@ -581,6 +681,10 @@ body, html {
   font-family: 'Ailerons';
   text-align: center;
   color: white;
+}
+.i-dunno-span{
+  margin-top: 20px;
+  font-size: 3vw;
 }
 @media (max-width:1000px){
   .responsive-alert{

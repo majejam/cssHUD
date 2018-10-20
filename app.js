@@ -11,6 +11,7 @@ const waveContainer = document.querySelector('.wave-container')
 const wavesHoverElements = document.querySelectorAll('.single-wave-container')
 const wavesElements = document.querySelectorAll('.wave-style')
 const rainContainer = document.querySelector('.rain-container')
+const optionCubeButtons = document.querySelectorAll('.option-cube-selection')
 const width = 400;
 const heigth = 200;
 for(let i = 0; i < wavesElements.length; i++){
@@ -18,6 +19,29 @@ for(let i = 0; i < wavesElements.length; i++){
 }
 for(let i = 0; i < 100; i++){
   generateRainElements(rainContainer)
+}
+
+//Option cube buttons
+for(let i = 0; i < optionCubeButtons.length; i++){
+  optionCubeButtons[i].addEventListener('click', () =>
+  {
+    clearButtons(optionCubeButtons)
+    optionCubeButtons[i].classList.toggle('small-option-button-container-selected')
+  });
+}
+//Option ripple buttons
+for(let i = 0; i < optionCubeButtons.length; i++){
+  optionCubeButtons[i].addEventListener('click', () =>
+  {
+    clearButtons(optionCubeButtons)
+    optionCubeButtons[i].classList.toggle('small-option-button-container-selected')
+  });
+}
+
+function clearButtons(elements){
+  for(let i = 0; i < elements.length; i++){
+      elements[i].classList.remove('small-option-button-container-selected');
+  }
 }
 menuToggle.addEventListener('click', () =>
 {
