@@ -84,7 +84,8 @@ body, html {
   animation-timing-function: ease;
   animation-name: hud-apparition-transform;
   animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  animation-fill-mode: backwards;
+  animation-delay: 1.5s;
   animation-duration: 5s;
 }
 .hud-big-container{
@@ -172,11 +173,6 @@ body, html {
   transition-timing-function: ease;
   will-change: transform;
 }
-@keyframes button-pop-left
-{
-    0%{ transform: translateX(200%);}
-    100%{transform: translateX(0%);}
-}
 
 .menu-container
 {
@@ -213,8 +209,8 @@ body, html {
   width: 33%;
   height: 93%;
 }
-.inner-right-container h1{
-  font-size: 4vw;
+.title-option{
+  font-size: 3.5vw;
 }
 .inner-menu-basic{
   border: 3px solid white;
@@ -607,8 +603,8 @@ body, html {
 /*Ripple effect*/
 .ripple-container{
   position: absolute;
-  width: 500px;
-  height:500px;
+  width: 400px;
+  height:400px;
   top: 50%;
   left: 50%;
   visibility: hidden;
