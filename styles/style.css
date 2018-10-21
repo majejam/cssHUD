@@ -1,6 +1,6 @@
 @font-face{
 font-family: "Ailerons";
-src: url("fonts/Ailerons-Typeface.otf") format("opentype");
+src: url("../fonts/Ailerons-Typeface.otf") format("opentype");
 }
 body, html {
     padding: 0;
