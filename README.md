@@ -17,7 +17,11 @@
 * The menu : By clicking the right arrow, the menu appears. There's is a lot of option that you can test.
 * The main HUD follows your mouse !
 * It is responsive until a certain resolution, then, a little message appears.
-* The rain drops are generate in js at launch, that's why we have a loading screen, just for the drops to fall down.  
+* The rain drops are generate in js at launch, that's why we have a loading screen, just for the drops to fall down.
+
+## Usage
+
+You can go see the project on my [website](https://thomaslacroix.fr/hud)
 
 ## Versioning
 See on [github](https://github.com/majejam/cssHUD/)
