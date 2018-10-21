@@ -4,9 +4,9 @@
 
 ## Requirements
 
-* A resolution of at least 1280 x 720 px
-* A modern browser (Chrome, Edge, Firefox & Safari)
-* A functionnig mouse
+* A resolution of at least 1280 x 720 px.
+* A modern browser (Chrome, Edge, Firefox & Safari).
+* A functioning mouse.
 
 ## Features
 
@@ -19,9 +19,13 @@
 * It is responsive until a certain resolution, then, a little message appears.
 * The rain drops are generate in js at launch, that's why we have a loading screen, just for the drops to fall down.
 
+## Ressources
+
+I used the [Ailerons typeface](https://www.behance.net/gallery/25541553/Ailerons) for this project.
+
 ## Usage
 
-You can go see the project on my [website](https://thomaslacroix.fr/hud)
+You can go see the project on my [website](https://thomaslacroix.fr/hud).
 
 ## Versioning
-See on [github](https://github.com/majejam/cssHUD/)
+See on [github](https://github.com/majejam/cssHUD/).
